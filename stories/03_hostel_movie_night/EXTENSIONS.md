@@ -42,6 +42,7 @@ Replace the demo file name with your own. Use separate objects for your checks s
 
 Add ComedyClip as a subclass of Entertainment. It uses 50 MB. Add it to show_options() and enjoy() without editing either.
 
+
 ### Extension 2: A friend shares data
 
 Add add_data(amount) to DataBundle. Positive amounts add MB and return True. Zero or negative amounts return False without changing state.
