@@ -8,7 +8,12 @@ from abc import ABC, abstractmethod
 class DataBundle:
     def __init__(self, megabytes):
         self.remaining = megabytes  # Validate the initial value via the setter.
-
+        
+        def add_data(self, amount):
+            if amount > 0:
+                self.remaining += amoount
+                return True
+             return False   
     @property
     def remaining(self):
         return self.__remaining  # Double underscore: name mangling, not secrecy.
