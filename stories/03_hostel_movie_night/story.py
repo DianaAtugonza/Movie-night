@@ -2,7 +2,18 @@
 Run: python3 story.py. Data costs are invented, not provider estimates.
 """
 from abc import ABC, abstractmethod
+from story import DtaBundle
 
+bundle = DataBundle(100)
+
+print(bundle.add_data(50))
+print(bundle.remaining)
+
+print(bundle.add_data(0))
+print(bundle.remiaining)
+
+print(nundle.add_data(-20))
+print(bundle.remaining)
 
 # ACT 1: Data belongs to an object that controls how much can be used.
 class DataBundle:
@@ -24,7 +35,6 @@ class DataBundle:
             return False
         self.remaining = self.remaining - amount
         return True
-
 
 # ACT 2: Every entertainment option answers the same two questions.
 class Entertainment(ABC):
