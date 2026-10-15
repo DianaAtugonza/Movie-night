@@ -110,6 +110,13 @@ class MovieNight:
             return f"{self.host}'s group enjoys {entertainment.title}."
         return f"{entertainment.title} needs too much data. Nobody hotspot secretly!"
 
+    def recap(self):
+        if not self._watched:
+            return f"{self.host}'s group has not watched anything"
+        titles =",".join(item.title for item in self._watched)
+        return (f"{self.host}'s recap:{self.activities} activity(ies)."
+                f"({titles});{self.bundle.remaining} MB Left.")
+
 
 def show_options(options):  # Week 1 function + list + loop.
     for option in options:
