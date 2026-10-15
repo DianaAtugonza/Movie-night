@@ -2,18 +2,6 @@
 Run: python3 story.py. Data costs are invented, not provider estimates.
 """
 from abc import ABC, abstractmethod
-from story import DtaBundle
-
-bundle = DataBundle(100)
-
-print(bundle.add_data(50))
-print(bundle.remaining)
-
-print(bundle.add_data(0))
-print(bundle.remiaining)
-
-print(nundle.add_data(-20))
-print(bundle.remaining)
 
 # ACT 1: Data belongs to an object that controls how much can be used.
 class DataBundle:
@@ -122,6 +110,9 @@ def show_options(options):  # Week 1 function + list + loop.
     for option in options:
         print(option.describe())  # Same call, different results: polymorphism.
 
+# Extension 4: In this part, we Return a new list of options whose data_cost fits within the available megabytes without changing inputs.
+def available(options, megabytes):
+    return [option for option in options if option.data_cost() <= megabytes]
 
 def main():
     print("=== HOSTEL MOVIE NIGHT ===")
@@ -146,3 +137,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
